@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5DDFCA671DC1698300D02D5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA661DC1698300D02D5A /* main.swift */; };
+		5DDFCA741DC169A800D02D5A /* LinearAlgebraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA731DC169A800D02D5A /* LinearAlgebraTests.swift */; };
+		5DDFCA7A1DC169C900D02D5A /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA791DC169C900D02D5A /* Vector.swift */; };
+		5DDFCA7B1DC169F900D02D5A /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA791DC169C900D02D5A /* Vector.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5DDFCA611DC1698300D02D5A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5DDFCA631DC1698300D02D5A /* LinearAlgebra */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinearAlgebra; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDFCA661DC1698300D02D5A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5DDFCA711DC169A800D02D5A /* LinearAlgebraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinearAlgebraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDFCA731DC169A800D02D5A /* LinearAlgebraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearAlgebraTests.swift; sourceTree = "<group>"; };
+		5DDFCA751DC169A800D02D5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DDFCA791DC169C900D02D5A /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DDFCA601DC1698300D02D5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDFCA6E1DC169A800D02D5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DDFCA5A1DC1698300D02D5A = {
+			isa = PBXGroup;
+			children = (
+				5DDFCA651DC1698300D02D5A /* LinearAlgebra */,
+				5DDFCA721DC169A800D02D5A /* LinearAlgebraTests */,
+				5DDFCA641DC1698300D02D5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DDFCA641DC1698300D02D5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DDFCA631DC1698300D02D5A /* LinearAlgebra */,
+				5DDFCA711DC169A800D02D5A /* LinearAlgebraTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DDFCA651DC1698300D02D5A /* LinearAlgebra */ = {
+			isa = PBXGroup;
+			children = (
+				5DDFCA661DC1698300D02D5A /* main.swift */,
+				5DDFCA791DC169C900D02D5A /* Vector.swift */,
+			);
+			path = LinearAlgebra;
+			sourceTree = "<group>";
+		};
+		5DDFCA721DC169A800D02D5A /* LinearAlgebraTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DDFCA731DC169A800D02D5A /* LinearAlgebraTests.swift */,
+				5DDFCA751DC169A800D02D5A /* Info.plist */,
+			);
+			path = LinearAlgebraTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DDFCA621DC1698300D02D5A /* LinearAlgebra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DDFCA6A1DC1698300D02D5A /* Build configuration list for PBXNativeTarget "LinearAlgebra" */;
+			buildPhases = (
+				5DDFCA5F1DC1698300D02D5A /* Sources */,
+				5DDFCA601DC1698300D02D5A /* Frameworks */,
+				5DDFCA611DC1698300D02D5A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinearAlgebra;
+			productName = LinearAlgebra;
+			productReference = 5DDFCA631DC1698300D02D5A /* LinearAlgebra */;
+			productType = "com.apple.product-type.tool";
+		};
+		5DDFCA701DC169A800D02D5A /* LinearAlgebraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DDFCA761DC169A800D02D5A /* Build configuration list for PBXNativeTarget "LinearAlgebraTests" */;
+			buildPhases = (
+				5DDFCA6D1DC169A800D02D5A /* Sources */,
+				5DDFCA6E1DC169A800D02D5A /* Frameworks */,
+				5DDFCA6F1DC169A800D02D5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinearAlgebraTests;
+			productName = LinearAlgebraTests;
+			productReference = 5DDFCA711DC169A800D02D5A /* LinearAlgebraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DDFCA5B1DC1698300D02D5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "EJ Mablekos";
+				TargetAttributes = {
+					5DDFCA621DC1698300D02D5A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = C836M7SVGF;
+						ProvisioningStyle = Automatic;
+					};
+					5DDFCA701DC169A800D02D5A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = C836M7SVGF;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5DDFCA5E1DC1698300D02D5A /* Build configuration list for PBXProject "LinearAlgebra" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5DDFCA5A1DC1698300D02D5A;
+			productRefGroup = 5DDFCA641DC1698300D02D5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DDFCA621DC1698300D02D5A /* LinearAlgebra */,
+				5DDFCA701DC169A800D02D5A /* LinearAlgebraTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DDFCA6F1DC169A800D02D5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DDFCA5F1DC1698300D02D5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDFCA7A1DC169C900D02D5A /* Vector.swift in Sources */,
+				5DDFCA671DC1698300D02D5A /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDFCA6D1DC169A800D02D5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDFCA7B1DC169F900D02D5A /* Vector.swift in Sources */,
+				5DDFCA741DC169A800D02D5A /* LinearAlgebraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5DDFCA681DC1698300D02D5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5DDFCA691DC1698300D02D5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5DDFCA6B1DC1698300D02D5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = C836M7SVGF;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5DDFCA6C1DC1698300D02D5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = C836M7SVGF;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5DDFCA771DC169A800D02D5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C836M7SVGF;
+				INFOPLIST_FILE = LinearAlgebraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emablekos.LinearAlgebraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5DDFCA781DC169A800D02D5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C836M7SVGF;
+				INFOPLIST_FILE = LinearAlgebraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emablekos.LinearAlgebraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DDFCA5E1DC1698300D02D5A /* Build configuration list for PBXProject "LinearAlgebra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDFCA681DC1698300D02D5A /* Debug */,
+				5DDFCA691DC1698300D02D5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DDFCA6A1DC1698300D02D5A /* Build configuration list for PBXNativeTarget "LinearAlgebra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDFCA6B1DC1698300D02D5A /* Debug */,
+				5DDFCA6C1DC1698300D02D5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5DDFCA761DC169A800D02D5A /* Build configuration list for PBXNativeTarget "LinearAlgebraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDFCA771DC169A800D02D5A /* Debug */,
+				5DDFCA781DC169A800D02D5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5DDFCA5B1DC1698300D02D5A /* Project object */;
+}
