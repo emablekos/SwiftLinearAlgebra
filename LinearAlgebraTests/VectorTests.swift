@@ -7,10 +7,8 @@
 //
 
 import XCTest
-import LinearAlgebra
-@testable import LinearAlgebra
 
-class LinearAlgebraTests: XCTestCase {
+class VectorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
@@ -117,4 +115,19 @@ class LinearAlgebraTests: XCTestCase {
         XCTAssert(a.projection(onto: b).isEqual(to: c, precision: 0.00001));
         XCTAssert(a.component(orthogonalTo: b).isEqual(to: d, precision: 0.00001));
     }
+
+    func testCross() {
+
+        let a = Vector(5,3,-2);
+        let b = Vector(-1,0,3)
+
+        let c = Vector(9,-13,3);
+        let d: Vector = a * b;
+
+        XCTAssertEqual(d, c);
+
+        let area: Double = Vector.areaOfParallelogram(a,b);
+        XCTAssertEqualWithAccuracy(area, 16.093, accuracy: 0.001);
+    }
+
 }

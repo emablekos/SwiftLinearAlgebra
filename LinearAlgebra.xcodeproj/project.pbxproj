@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D6365341DC83CF600005DF4 /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6365331DC83CF600005DF4 /* LineTests.swift */; };
+		5D6365351DC840A400005DF4 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA791DC169C900D02D5A /* Vector.swift */; };
+		5D6365361DC840A400005DF4 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D727D861DC5419100EA1F46 /* Line.swift */; };
+		5D6365391DC84EC800005DF4 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6365381DC84EC800005DF4 /* Double+Extension.swift */; };
+		5D727D871DC5419100EA1F46 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D727D861DC5419100EA1F46 /* Line.swift */; };
 		5DDFCA671DC1698300D02D5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA661DC1698300D02D5A /* main.swift */; };
-		5DDFCA741DC169A800D02D5A /* LinearAlgebraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA731DC169A800D02D5A /* LinearAlgebraTests.swift */; };
+		5DDFCA741DC169A800D02D5A /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA731DC169A800D02D5A /* VectorTests.swift */; };
 		5DDFCA7A1DC169C900D02D5A /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA791DC169C900D02D5A /* Vector.swift */; };
-		5DDFCA7B1DC169F900D02D5A /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA791DC169C900D02D5A /* Vector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,10 +30,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D6365331DC83CF600005DF4 /* LineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineTests.swift; sourceTree = "<group>"; };
+		5D6365381DC84EC800005DF4 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		5D727D861DC5419100EA1F46 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		5DDFCA631DC1698300D02D5A /* LinearAlgebra */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinearAlgebra; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDFCA661DC1698300D02D5A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5DDFCA711DC169A800D02D5A /* LinearAlgebraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinearAlgebraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DDFCA731DC169A800D02D5A /* LinearAlgebraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearAlgebraTests.swift; sourceTree = "<group>"; };
+		5DDFCA731DC169A800D02D5A /* VectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorTests.swift; sourceTree = "<group>"; };
 		5DDFCA751DC169A800D02D5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DDFCA791DC169C900D02D5A /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +82,8 @@
 			children = (
 				5DDFCA661DC1698300D02D5A /* main.swift */,
 				5DDFCA791DC169C900D02D5A /* Vector.swift */,
+				5D727D861DC5419100EA1F46 /* Line.swift */,
+				5D6365381DC84EC800005DF4 /* Double+Extension.swift */,
 			);
 			path = LinearAlgebra;
 			sourceTree = "<group>";
@@ -82,8 +91,9 @@
 		5DDFCA721DC169A800D02D5A /* LinearAlgebraTests */ = {
 			isa = PBXGroup;
 			children = (
-				5DDFCA731DC169A800D02D5A /* LinearAlgebraTests.swift */,
+				5DDFCA731DC169A800D02D5A /* VectorTests.swift */,
 				5DDFCA751DC169A800D02D5A /* Info.plist */,
+				5D6365331DC83CF600005DF4 /* LineTests.swift */,
 			);
 			path = LinearAlgebraTests;
 			sourceTree = "<group>";
@@ -180,6 +190,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6365391DC84EC800005DF4 /* Double+Extension.swift in Sources */,
+				5D727D871DC5419100EA1F46 /* Line.swift in Sources */,
 				5DDFCA7A1DC169C900D02D5A /* Vector.swift in Sources */,
 				5DDFCA671DC1698300D02D5A /* main.swift in Sources */,
 			);
@@ -189,8 +201,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DDFCA7B1DC169F900D02D5A /* Vector.swift in Sources */,
-				5DDFCA741DC169A800D02D5A /* LinearAlgebraTests.swift in Sources */,
+				5D6365351DC840A400005DF4 /* Vector.swift in Sources */,
+				5D6365361DC840A400005DF4 /* Line.swift in Sources */,
+				5D6365341DC83CF600005DF4 /* LineTests.swift in Sources */,
+				5DDFCA741DC169A800D02D5A /* VectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +368,7 @@
 				5DDFCA6C1DC1698300D02D5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DDFCA761DC169A800D02D5A /* Build configuration list for PBXNativeTarget "LinearAlgebraTests" */ = {
 			isa = XCConfigurationList;
@@ -362,6 +377,7 @@
 				5DDFCA781DC169A800D02D5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
