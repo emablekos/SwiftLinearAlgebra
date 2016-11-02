@@ -27,7 +27,7 @@ struct Line : CustomStringConvertible {
         self.basepoint = Line.basepointFrom(normal: normal, constant: constant);
     }
 
-    private static func basepointFrom(normal: Vector, constant: Double) -> Vector {
+    static func basepointFrom(normal: Vector, constant: Double) -> Vector {
 
         var arr = [Double](repeating:0.0, count:normal.dimension);
 
@@ -120,9 +120,12 @@ struct Line : CustomStringConvertible {
     }
 
     var description: String {
+        return Line.equationDescription(normal: self.normal, constant: self.constant);
+    }
 
+    static func equationDescription(normal: Vector, constant: Double) -> String {
         let str: NSMutableString = NSMutableString();
-        for (i, c) in self.normal.coordinates.enumerated() {
+        for (i, c) in normal.coordinates.enumerated() {
             if (abs(c) > DBL_EPSILON) {
                 let isfirst = str.length == 0
                 if !isfirst {
