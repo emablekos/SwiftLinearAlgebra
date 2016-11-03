@@ -12,6 +12,8 @@
 		5D441B131DC96434006D8B54 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D441B0F1DC8D65E006D8B54 /* Plane.swift */; };
 		5D441B151DC99E4B006D8B54 /* LinearObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D441B141DC99E4B006D8B54 /* LinearObject.swift */; };
 		5D441B161DC99E6D006D8B54 /* LinearObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D441B141DC99E4B006D8B54 /* LinearObject.swift */; };
+		5D441B181DCAD78F006D8B54 /* Intersection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D441B171DCAD78F006D8B54 /* Intersection.swift */; };
+		5D441B191DCADAF9006D8B54 /* Intersection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D441B171DCAD78F006D8B54 /* Intersection.swift */; };
 		5D6365341DC83CF600005DF4 /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6365331DC83CF600005DF4 /* LineTests.swift */; };
 		5D6365351DC840A400005DF4 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA791DC169C900D02D5A /* Vector.swift */; };
 		5D6365361DC840A400005DF4 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D727D861DC5419100EA1F46 /* Line.swift */; };
@@ -38,6 +40,7 @@
 		5D441B0F1DC8D65E006D8B54 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		5D441B111DC96153006D8B54 /* PlaneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneTests.swift; sourceTree = "<group>"; };
 		5D441B141DC99E4B006D8B54 /* LinearObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearObject.swift; sourceTree = "<group>"; };
+		5D441B171DCAD78F006D8B54 /* Intersection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intersection.swift; sourceTree = "<group>"; };
 		5D6365331DC83CF600005DF4 /* LineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineTests.swift; sourceTree = "<group>"; };
 		5D6365381DC84EC800005DF4 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		5D727D861DC5419100EA1F46 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 				5D6365381DC84EC800005DF4 /* Double+Extension.swift */,
 				5D441B0F1DC8D65E006D8B54 /* Plane.swift */,
 				5D441B141DC99E4B006D8B54 /* LinearObject.swift */,
+				5D441B171DCAD78F006D8B54 /* Intersection.swift */,
 			);
 			path = LinearAlgebra;
 			sourceTree = "<group>";
@@ -206,6 +210,7 @@
 				5D441B101DC8D65E006D8B54 /* Plane.swift in Sources */,
 				5D441B151DC99E4B006D8B54 /* LinearObject.swift in Sources */,
 				5DDFCA7A1DC169C900D02D5A /* Vector.swift in Sources */,
+				5D441B181DCAD78F006D8B54 /* Intersection.swift in Sources */,
 				5DDFCA671DC1698300D02D5A /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +223,7 @@
 				5D6365361DC840A400005DF4 /* Line.swift in Sources */,
 				5D6365341DC83CF600005DF4 /* LineTests.swift in Sources */,
 				5D441B161DC99E6D006D8B54 /* LinearObject.swift in Sources */,
+				5D441B191DCADAF9006D8B54 /* Intersection.swift in Sources */,
 				5D441B121DC96153006D8B54 /* PlaneTests.swift in Sources */,
 				5D441B131DC96434006D8B54 /* Plane.swift in Sources */,
 				5DDFCA741DC169A800D02D5A /* VectorTests.swift in Sources */,

@@ -34,9 +34,9 @@ struct Plane : CustomStringConvertible {
         return Line.equationDescription(normal: self.normal, constant: self.constant);
     }
 
-    static func parallel(a: Plane, b: Plane) -> Bool {
+    func isParallel(to: Plane) -> Bool {
         // Two lines are parallel if their normals are parallel
-        return Vector.parallel(a.normal, b.normal)
+        return Vector.parallel(self.normal, to.normal)
     }
 
     func isEqual(to: Plane, precision: Double = DBL_EPSILON) -> Bool {
@@ -53,7 +53,7 @@ struct Plane : CustomStringConvertible {
         }
 
         // Just check if they are parallel
-        if !Plane.parallel(a: self, b: to) {
+        if !self.isParallel(to: to){
             return false;
         }
 

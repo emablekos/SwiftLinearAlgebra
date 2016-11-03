@@ -33,12 +33,12 @@ class LineTests: XCTestCase {
         var l1 = Line(A:3, B:-2, k:1);
         var l2 = Line(A:-6, B:4, k:0);
 
-        XCTAssertTrue(Line.parallel(a: l1, b: l2));
+        XCTAssertTrue(l1.isParallel(to: l2));
 
         l1 = Line(A:1, B:2, k:3);
         l2 = Line(A:1, B:-1, k:2);
 
-        XCTAssertFalse(Line.parallel(a: l1, b: l2));
+        XCTAssertFalse(l1.isParallel(to: l2));
     }
 
     func testEqual() {
@@ -56,6 +56,8 @@ class LineTests: XCTestCase {
         let l2 = Line(A:8.172, B:4.114, k:9.883);
 
         let v = Vector(1.1727766354646414, 0.072695511663331838);
-        XCTAssertEqual(Line.intersection(a: l1, b: l2), v);
+        let i = l1.intersect(with: l2);
+        XCTAssertEqual(i.kind, Intersection.Kind.vector);
+        XCTAssertEqual(i.value as! Vector, v);
     }
 }

@@ -48,13 +48,13 @@ struct Line : CustomStringConvertible {
         return NSNotFound;
     }
 
-    static func parallel(a: Line, b: Line) -> Bool {
+    func isParallel(to: Line) -> Bool {
         // Two lines are parallel if their normals are parallel
-        return Vector.parallel(a.normal, b.normal)
+        return Vector.parallel(self.normal, to.normal)
     }
 
-    static func intersection(a: Line, b: Line) -> Vector? {
-        var lines = [a,b];
+    func intersect(with: Line) -> Intersection {
+        var lines = [self,with];
 
         // If our first line has zero in the first parameter, flip the order so our equation works
         if lines.first!.normal.x.isEqual(to: 0.0) {
@@ -65,7 +65,7 @@ struct Line : CustomStringConvertible {
 
         if lines.first!.normal.x.isEqual(to: 0.0) {
             print("Both lines have zero in first parameter, therefore are horizontal and parallel");
-            return nil;
+            return Intersection();
         }
 
         var A,B,C,D,k1,k2,x,y: Double;
@@ -83,13 +83,13 @@ struct Line : CustomStringConvertible {
         let denom = A*D - B*C
         if denom.isEqual(to: 0.0) {
             print("Parallel lines");
-            return nil;
+            return Intersection();
         }
 
         x = (D*k1 - B*k2)/denom;
         y = (-C*k1 + A*k2)/denom;
 
-        return Vector(x,y);
+        return Intersection(Vector(x,y));
     }
 
     func isEqual(to: Line, precision: Double = DBL_EPSILON) -> Bool {
@@ -106,7 +106,7 @@ struct Line : CustomStringConvertible {
         }
 
         // Just check if they are parallel
-        if !Line.parallel(a: self, b: to) {
+        if !self.isParallel(to: to) {
             return false;
         }
 
