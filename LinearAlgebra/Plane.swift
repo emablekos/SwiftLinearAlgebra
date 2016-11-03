@@ -57,13 +57,22 @@ struct Plane : CustomStringConvertible {
             return false;
         }
 
-        // Find the vector between both lines basepoints
+        // Find the vector between both planes basepoints
         let v = to.basepoint - self.basepoint;
 
-        // If orthogonal to our normal then lines are parallel
+        // If orthogonal to our normal then planes are parallel
         let b = Vector.orthogonal(v, self.normal, precision: precision);
         
         return b;
+    }
+
+    static func firstNonZeroIndex(_ coords: [Double]) -> Int {
+        for (i, c) in coords.enumerated() {
+            if (!c.isEqual(to: 0.0)) {
+                return i;
+            }
+        }
+        return NSNotFound;
     }
 
 
