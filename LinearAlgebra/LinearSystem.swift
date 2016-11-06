@@ -9,7 +9,12 @@
 import Foundation
 
 
-class LinearSystem : CustomStringConvertible {
+
+struct LinearSystem : CustomStringConvertible, CustomDebugStringConvertible {
+
+    enum TriangularFormResult {
+        case none, consistent, inconsistent, rref;
+    }
 
     var objects: [Plane];
     let dimension: Int;
@@ -29,11 +34,17 @@ class LinearSystem : CustomStringConvertible {
         }
     }
 
-    static func firstNonZeroIndices(objects: [Plane]) -> [Int] {
-        return objects.map{Plane.firstNonZeroIndex($0.normal.coordinates)};
+    subscript(safe i: Int) -> Plane? {
+        get {
+            return i >= 0 && i < objects.count ? objects[i] : nil;
+        }
     }
 
-    func swapRows(_ i: Int, _ j: Int) {
+    static func firstNonZeroIndices(objects: [Plane]) -> [Int] {
+        return objects.map{p in Plane.firstNonZeroIndex(p.normal.coordinates)};
+    }
+
+    mutating func swapRows(_ i: Int, _ j: Int) {
         let pi = self.objects[i];
         let pj = self.objects[j];
 
@@ -41,14 +52,14 @@ class LinearSystem : CustomStringConvertible {
         self.objects.replaceSubrange(j..<j+1, with: [pi]);
     }
 
-    func multiplyRow(_ i: Int, by: Double) {
+    mutating func multiplyRow(_ i: Int, by: Double) {
         var pi = self.objects[i];
         pi = Plane(normal: pi.normal*by, constant: pi.constant*by)
 
         self.objects.replaceSubrange(i..<i+1, with: [pi]);
     }
 
-    func addRow(_ i: Int, to j: Int, multiplier by: Double) {
+    mutating func addRow(_ i: Int, to j: Int, multiplier by: Double) {
         var pi = self.objects[i];
         var pj = self.objects[j];
 
@@ -58,13 +69,132 @@ class LinearSystem : CustomStringConvertible {
         self.objects.replaceSubrange(j..<j+1, with: [pj]);
     }
 
+    mutating func computeTriangularForm() -> TriangularFormResult {
+
+        let rowCount = self.objects.count;
+        var column = 0;
+        var isTriangular = false;
+
+        while column < dimension && column < rowCount && !isTriangular {
+
+            // Check for inconsistent result
+            for (_, p) in self.objects.enumerated() {
+                if (p.normal.isZero()) && !p.constant.isEqual(to: 0.0, precision:DBL_EPSILON) {
+                    return TriangularFormResult.inconsistent;
+                }
+            }
+
+            var allLeading = true;
+            for (i, p) in self.objects.enumerated() {
+
+                for j in 0..<i {
+                    if !p.normal[j].isEqual(to: 0.0, precision:DBL_EPSILON) {
+                        allLeading = false
+                        break;
+                    }
+                }
+            }
+            if (allLeading) {
+                isTriangular = true;
+                continue;
+            }
+
+            let row = column;
+            var swapRow = row+1;
+
+            while self.objects[row].normal[column].isEqual(to: 0.0) {
+                if swapRow >= rowCount {
+                    column += 1
+                    swapRow = row + 1
+
+                    if (column >= dimension) {
+                        assert(false)
+                    }
+                }
+
+                self.swapRows(row, swapRow);
+                swapRow += 1;
+            }
+
+            var targetRow = row+1;
+            while targetRow < rowCount {
+                if (objects[targetRow].normal[column].isEqual(to: 0.0)) {
+                    targetRow += 1;
+                    continue;
+                }
+
+                let mult = objects[targetRow].normal[column] / objects[row].normal[column];
+                addRow(row, to: targetRow, multiplier: -mult);
+
+                targetRow += 1;
+            }
+
+            column += 1;
+        }
+
+        return TriangularFormResult.consistent;
+    }
+
+    mutating func computeRREF() -> Intersection {
+
+        let result = self.computeTriangularForm();
+
+        if result != TriangularFormResult.consistent {
+            return Intersection();
+        }
+
+        for row in (0..<self.objects.count).reversed() {
+
+            let p = self[row];
+            let col = p.normal.firstNonZeroCoordinate();
+
+            if let c = p.normal[safe: col] {
+                self.multiplyRow(row, by: 1.0/c);
+            }
+        }
+
+        for row in (1..<self.objects.count).reversed() {
+
+            let p2 = self[row];
+
+            let col = p2.normal.firstNonZeroCoordinate();
+
+            if let _ = p2.normal[safe: col] {
+
+                for target in (0..<row).reversed() {
+                    let p1 = self[target];
+                    if let c:Double = p1.normal[safe: col], !c.isNearZero() {
+                        self.addRow(row, to: target, multiplier: -c);
+                    }
+                }
+            }
+        }
+
+        var solution: [Double] = Array.init(repeating: 0.0, count: self.dimension);
+
+        var F: Int = 0;
+        for row in 0..<self.objects.count {
+            for col in F..<self.dimension {
+                if (!self[row].normal[col].isNearZero()) {
+                    solution[col] = self[row].constant;
+                    F = col+1;
+                    break;
+                }
+            }
+        }
+
+        if (F != self.dimension) {
+            return Intersection(Line(A: 0, B: 0, k: 0));
+        }
+
+        return Intersection(Vector(solution));
+    }
+
     var description: String {
         return objects.map{$0.description}.joined(separator: "\n");
     }
-
-
-
-
-
-
+    
+    var debugDescription: String {
+        return objects.map{$0.description}.joined(separator: "\n");
+    }
 }

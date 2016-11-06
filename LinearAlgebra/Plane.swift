@@ -20,7 +20,6 @@ struct Plane : CustomStringConvertible {
     }
 
     init(normal: Vector, constant: Double) {
-        assert(!normal.isZero());
 
         dimension = normal.dimension;
 

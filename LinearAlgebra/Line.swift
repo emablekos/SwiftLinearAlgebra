@@ -19,8 +19,6 @@ struct Line : CustomStringConvertible {
     }
 
     init(normal: Vector, constant: Double) {
-        assert(!normal.isZero());
-
         self.normal = normal;
         self.constant = constant;
 
@@ -28,6 +26,9 @@ struct Line : CustomStringConvertible {
     }
 
     static func basepointFrom(normal: Vector, constant: Double) -> Vector {
+        if normal.isZero() {
+            return normal;
+        }
 
         var arr = [Double](repeating:0.0, count:normal.dimension);
 
@@ -39,7 +40,7 @@ struct Line : CustomStringConvertible {
         return Vector(arr);
     }
 
-    private static func firstNonZeroIndex(_ coords: [Double]) -> Int {
+    static func firstNonZeroIndex(_ coords: [Double]) -> Int {
         for (i, c) in coords.enumerated() {
             if (!c.isEqual(to: 0.0)) {
                 return i;

@@ -22,6 +22,7 @@
 		5D6365361DC840A400005DF4 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D727D861DC5419100EA1F46 /* Line.swift */; };
 		5D6365391DC84EC800005DF4 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6365381DC84EC800005DF4 /* Double+Extension.swift */; };
 		5D727D871DC5419100EA1F46 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D727D861DC5419100EA1F46 /* Line.swift */; };
+		5D746B8C1DCEEF180039CD89 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6365381DC84EC800005DF4 /* Double+Extension.swift */; };
 		5DDFCA671DC1698300D02D5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA661DC1698300D02D5A /* main.swift */; };
 		5DDFCA741DC169A800D02D5A /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA731DC169A800D02D5A /* VectorTests.swift */; };
 		5DDFCA7A1DC169C900D02D5A /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCA791DC169C900D02D5A /* Vector.swift */; };
@@ -232,6 +233,7 @@
 				5D6365341DC83CF600005DF4 /* LineTests.swift in Sources */,
 				5D441B161DC99E6D006D8B54 /* LinearObject.swift in Sources */,
 				5D441B191DCADAF9006D8B54 /* Intersection.swift in Sources */,
+				5D746B8C1DCEEF180039CD89 /* Double+Extension.swift in Sources */,
 				5D441B121DC96153006D8B54 /* PlaneTests.swift in Sources */,
 				5D441B131DC96434006D8B54 /* Plane.swift in Sources */,
 				5D441B1E1DCB09A8006D8B54 /* LinearSystemTests.swift in Sources */,

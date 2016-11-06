@@ -28,6 +28,18 @@ struct Vector : Equatable {
         return Vector(c);
     }
 
+    subscript(i: Int) -> Double {
+        get {
+            return coordinates[i];
+        }
+    }
+
+    subscript(safe i: Int) -> Double? {
+        get {
+            return i >= 0 && i < coordinates.count ? coordinates[i] : nil;
+        }
+    }
+
     var dimension: Int {
         get {
             return self.coordinates.count;
@@ -105,8 +117,8 @@ struct Vector : Equatable {
     }
 
     func isZero() -> Bool {
-        for v in self.coordinates {
-            if (fabs(0.0-v) > DBL_EPSILON) {
+        for v:Double in self.coordinates {
+            if !v.isEqual(to: 0.0, precision:DBL_EPSILON) {
                 return false;
             }
         }
@@ -114,12 +126,22 @@ struct Vector : Equatable {
     }
 
     func isIdentity() -> Bool {
-        for v in self.coordinates {
-            if (fabs(1.0-v) > DBL_EPSILON) {
+        for v:Double in self.coordinates {
+            if !v.isEqual(to: 1.0, precision:DBL_EPSILON) {
                 return false;
             }
         }
         return true;
+    }
+
+    func firstNonZeroCoordinate() -> Int {
+        for (i, c) in coordinates.enumerated() {
+            let val: Double = c;
+            if (!val.isEqual(to: 0.0, precision: 0.00000001)){
+                return i;
+            }
+        }
+        return NSNotFound;
     }
 
     func magnitude() -> Double {
