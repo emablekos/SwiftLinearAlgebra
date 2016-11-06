@@ -93,7 +93,6 @@ class LinearSystemTests : XCTestCase {
 
     func testRREF() {
         var s,r: LinearSystem;
-        var res: LinearSystem.TriangularFormResult;
 
         s = LinearSystem([
             Plane(A:1, B: 1, C: 1, k:1),
@@ -138,6 +137,72 @@ class LinearSystemTests : XCTestCase {
         XCTAssert(r[0].isEqual(to: Plane(A: 1, B: 0, C: 0, k: 23/9)));
         XCTAssert(r[1].isEqual(to: Plane(A: 0, B: 1, C: 0, k: 7/9)));
         XCTAssert(r[2].isEqual(to: Plane(A: 0, B: 0, C: 1, k: 2/9)));
+
+    }
+
+    func testSolutions() {
+        var s: LinearSystem;
+        var i: Intersection;
+
+        s = LinearSystem([
+            Plane(A: 5.862, B: 1.178, C: -10.366, k: -8.15),
+            Plane(A:-2.931, B:-0.589, C: 5.183, k:-4.075)
+            ]);
+        i = s.computeRREF();
+        XCTAssertEqual(i.kind, Intersection.Kind.none);
+
+        
+
+        s = LinearSystem([
+            Plane(A: 5.262, B: 2.739, C: -9.878, k: -3.441),
+            Plane(A: 5.111, B: 6.358, C: 7.638, k: -2.152),
+            Plane(A: 2.016, B: -9.924, C: -1.367, k: -9.278),
+            Plane(A: 2.167, B:-13.543, C:-18.883, k:-10.567)
+            ]);
+        i = s.computeRREF();
+        XCTAssertEqual(i.kind, Intersection.Kind.vector);
+        let v = i.value as! Vector
+        XCTAssertEqualWithAccuracy(v[0], -1.177, accuracy:0.001);
+        XCTAssertEqualWithAccuracy(v[1], 0.707, accuracy:0.001);
+        XCTAssertEqualWithAccuracy(v[2], -0.083, accuracy:0.001);
+
+
+
+        s = LinearSystem([
+            Plane(A: 0.786, B: 0.786, C: 0.588, k: -0.714),
+            Plane(A: -0.131, B: -0.131, C: 0.244, k: 0.319)
+            ]);
+        i = s.computeRREF();
+        XCTAssertEqual(i.kind, Intersection.Kind.parameters)
+        var a = i.value as! [Vector];
+        XCTAssert(a[0].isEqual(to: Vector(-1.346, 0.0, 0.585), precision: 0.001));
+        XCTAssert(a[1].isEqual(to: Vector(-1,1,0), precision: 0.001));
+
+        s = LinearSystem([
+            Plane(A: 8.631, B: 5.112, C: -1.816, k: -5.113),
+            Plane(A: 4.315, B: 11.132, C: -5.27, k: -6.775),
+            Plane(A: -2.158, B: 3.01, C: -1.727, k: -0.831)
+            ]);
+        i = s.computeRREF();
+        XCTAssertEqual(i.kind, Intersection.Kind.parameters)
+        a = i.value as! [Vector];
+        XCTAssert(a[0].isEqual(to: Vector(-0.301, -0.492, 0.0), precision:0.001));
+        XCTAssert(a[1].isEqual(to: Vector(-0.091, 0.509, 1.0), precision:0.001));
+
+        s = LinearSystem([
+            Plane(A: 0.935, B: 1.76, C: -9.365, k: -9.955),
+            Plane(A: 0.187, B: 0.352, C: -1.873, k: -1.991),
+            Plane(A: 0.374, B: 0.704, C: -3.746, k: -3.982),
+            Plane(A: -0.561, B: -1.056, C: 5.619, k: 5.973)
+            ]);
+        i = s.computeRREF();
+        XCTAssertEqual(i.kind, Intersection.Kind.parameters)
+        a = i.value as! [Vector];
+        XCTAssert(a[0].isEqual(to: Vector(-10.647, 0, 0), precision:0.001));
+        XCTAssert(a[1].isEqual(to: Vector(-1.882, 1, 0), precision:0.001));
+        XCTAssert(a[2].isEqual(to: Vector(10.016, 0, 1), precision:0.001));
+
+
 
     }
 

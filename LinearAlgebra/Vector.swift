@@ -8,7 +8,7 @@
 
 import Cocoa
 
-struct Vector : Equatable {
+struct Vector : Equatable, CustomStringConvertible, CustomDebugStringConvertible {
 
     var coordinates: [Double] = [];
 
@@ -249,6 +249,15 @@ struct Vector : Equatable {
     static func areaOfParallelogram(_ u: Vector, _ v: Vector) -> Double {
         let c = u.cross(v);
         return c.magnitude();
+    }
+
+    var description: String {
+        let s = self.coordinates.map{String(format:"%.3f", $0)}.joined(separator: ", ");
+        return String(format:"<%@>", s);
+    }
+
+    var debugDescription: String {
+        return self.description;
     }
 
 }

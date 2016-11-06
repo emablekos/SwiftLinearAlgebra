@@ -13,7 +13,7 @@ import Foundation
 struct Intersection {
 
     enum Kind {
-        case none, vector, line, plane
+        case none, vector, line, plane, parameters
     }
 
     let kind: Kind;
@@ -39,6 +39,8 @@ struct Intersection {
         self.value = plane;
     }
 
-
-
+    init(_ vectors: [Vector]) {
+        self.value = vectors;
+        self.kind = Kind.parameters;
+    }
 }

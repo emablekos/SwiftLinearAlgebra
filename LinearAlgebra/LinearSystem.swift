@@ -172,19 +172,33 @@ struct LinearSystem : CustomStringConvertible, CustomDebugStringConvertible {
 
         var solution: [Double] = Array.init(repeating: 0.0, count: self.dimension);
 
-        var F: Int = 0;
-        for row in 0..<self.objects.count {
-            for col in F..<self.dimension {
-                if (!self[row].normal[col].isNearZero()) {
-                    solution[col] = self[row].constant;
-                    F = col+1;
-                    break;
+        var parameters: [[Double]] = [];
+        for i in 0..<self.dimension {
+            var p = Array.init(repeating: 0.0, count: self.dimension);
+            p[i] = 1.0;
+            parameters.append(p);
+        }
+
+        for (_,p) in self.objects.enumerated() {
+            let col = p.normal.firstNonZeroCoordinate();
+            if col != NSNotFound {
+                solution[col] = p.constant;
+                parameters[col] = [];
+
+                for ncol in col+1..<self.dimension {
+                    if !p.normal[ncol].isNearZero() {
+                        parameters[ncol][col] = -p.normal[ncol];
+                    }
                 }
             }
         }
+        parameters = parameters.filter{$0.count > 0}
 
-        if (F != self.dimension) {
-            return Intersection(Line(A: 0, B: 0, k: 0));
+        if parameters.count > 0 {
+            var vectors: [Vector] = [Vector(solution)];
+            vectors.append(contentsOf: parameters.map{Vector($0)});
+
+            return Intersection(vectors);
         }
 
         return Intersection(Vector(solution));
