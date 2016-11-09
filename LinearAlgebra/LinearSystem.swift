@@ -79,7 +79,7 @@ struct LinearSystem : CustomStringConvertible, CustomDebugStringConvertible {
 
             // Check for inconsistent result
             for (_, p) in self.objects.enumerated() {
-                if (p.normal.isZero()) && !p.constant.isEqual(to: 0.0, precision:DBL_EPSILON) {
+                if (p.normal.isZero()) && !p.constant.isNearZero() {
                     return TriangularFormResult.inconsistent;
                 }
             }
@@ -88,7 +88,7 @@ struct LinearSystem : CustomStringConvertible, CustomDebugStringConvertible {
             for (i, p) in self.objects.enumerated() {
 
                 for j in 0..<i {
-                    if !p.normal[j].isEqual(to: 0.0, precision:DBL_EPSILON) {
+                    if !p.normal[j].isNearZero() {
                         allLeading = false
                         break;
                     }

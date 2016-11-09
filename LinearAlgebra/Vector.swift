@@ -118,7 +118,7 @@ struct Vector : Equatable, CustomStringConvertible, CustomDebugStringConvertible
 
     func isZero() -> Bool {
         for v:Double in self.coordinates {
-            if !v.isEqual(to: 0.0, precision:DBL_EPSILON) {
+            if !v.isNearZero() {
                 return false;
             }
         }
@@ -127,7 +127,7 @@ struct Vector : Equatable, CustomStringConvertible, CustomDebugStringConvertible
 
     func isIdentity() -> Bool {
         for v:Double in self.coordinates {
-            if !v.isEqual(to: 1.0, precision:DBL_EPSILON) {
+            if !v.isNearZero() {
                 return false;
             }
         }
@@ -137,7 +137,7 @@ struct Vector : Equatable, CustomStringConvertible, CustomDebugStringConvertible
     func firstNonZeroCoordinate() -> Int {
         for (i, c) in coordinates.enumerated() {
             let val: Double = c;
-            if (!val.isEqual(to: 0.0, precision: 0.00000001)){
+            if !val.isNearZero() {
                 return i;
             }
         }

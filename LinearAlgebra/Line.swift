@@ -32,21 +32,12 @@ struct Line : CustomStringConvertible {
 
         var arr = [Double](repeating:0.0, count:normal.dimension);
 
-        let i = Line.firstNonZeroIndex(normal.coordinates);
+        let i = normal.firstNonZeroCoordinate();
         let c = normal.coordinates[i];
 
         arr[i] = constant/c;
 
         return Vector(arr);
-    }
-
-    static func firstNonZeroIndex(_ coords: [Double]) -> Int {
-        for (i, c) in coords.enumerated() {
-            if (!c.isEqual(to: 0.0)) {
-                return i;
-            }
-        }
-        return NSNotFound;
     }
 
     func isParallel(to: Line) -> Bool {

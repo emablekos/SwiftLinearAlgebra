@@ -43,7 +43,7 @@ struct Plane : CustomStringConvertible {
         if self.normal.isZero() {
             if to.normal.isZero() {
                 // If both normals are zero and the constants are equal, the lines are equal
-                return self.constant.isEqual(to: to.constant);
+                return self.constant.isEqual(to: to.constant, precision: DBL_EPSILON);
             } else {
                 return false;
             }
