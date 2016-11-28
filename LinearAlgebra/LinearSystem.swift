@@ -102,7 +102,7 @@ struct LinearSystem : CustomStringConvertible, CustomDebugStringConvertible {
             let row = column;
             var swapRow = row+1;
 
-            while self.objects[row].normal[column].isEqual(to: 0.0) {
+            while self.objects[row].normal[column].isEqual(circa: 0.0) {
                 if swapRow >= rowCount {
                     column += 1
                     swapRow = row + 1
@@ -118,7 +118,7 @@ struct LinearSystem : CustomStringConvertible, CustomDebugStringConvertible {
 
             var targetRow = row+1;
             while targetRow < rowCount {
-                if (objects[targetRow].normal[column].isEqual(to: 0.0)) {
+                if (objects[targetRow].normal[column].isEqual(circa: 0.0)) {
                     targetRow += 1;
                     continue;
                 }

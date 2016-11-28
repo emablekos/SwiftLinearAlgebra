@@ -16,11 +16,11 @@ extension Double {
         return lhs.isEqual(to: rhs);
     }
 
-    func isEqual(to: Double, precision: Double = 0.0000000000001) -> Bool {
+    func isEqual(circa to: Double, precision: Double = DBL_EPSILON * 1000) -> Bool {
         return abs(to - self) < precision;
     }
 
     func isNearZero() -> Bool {
-        return self.isEqual(to: 0.0, precision: 0.0000000000001);
+        return self.isEqual(circa: 0.0);
     }
 }

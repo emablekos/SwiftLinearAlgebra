@@ -32,12 +32,21 @@ struct Line : CustomStringConvertible {
 
         var arr = [Double](repeating:0.0, count:normal.dimension);
 
-        let i = normal.firstNonZeroCoordinate();
+        let i = Line.firstNonZeroIndex(normal.coordinates);
         let c = normal.coordinates[i];
 
         arr[i] = constant/c;
 
         return Vector(arr);
+    }
+
+    static func firstNonZeroIndex(_ coords: [Double]) -> Int {
+        for (i, c) in coords.enumerated() {
+            if (!c.isEqual(to: 0.0)) {
+                return i;
+            }
+        }
+        return NSNotFound;
     }
 
     func isParallel(to: Line) -> Bool {
@@ -49,13 +58,13 @@ struct Line : CustomStringConvertible {
         var lines = [self,with];
 
         // If our first line has zero in the first parameter, flip the order so our equation works
-        if lines.first!.normal.x.isEqual(to: 0.0) {
+        if lines.first!.normal.x.isEqual(circa: 0.0) {
             let l = lines.last!;
             lines.removeLast();
             lines.insert(l, at: 0);
         }
 
-        if lines.first!.normal.x.isEqual(to: 0.0) {
+        if lines.first!.normal.x.isEqual(circa: 0.0) {
             print("Both lines have zero in first parameter, therefore are horizontal and parallel");
             return Intersection();
         }
@@ -73,7 +82,7 @@ struct Line : CustomStringConvertible {
 
         // Known formula for solving intersections
         let denom = A*D - B*C
-        if denom.isEqual(to: 0.0) {
+        if denom.isEqual(circa: 0.0) {
             print("Parallel lines");
             return Intersection();
         }
@@ -84,12 +93,12 @@ struct Line : CustomStringConvertible {
         return Intersection(Vector(x,y));
     }
 
-    func isEqual(to: Line, precision: Double = DBL_EPSILON) -> Bool {
+    func isEqual(to: Line, precision: Double = DBL_EPSILON * 1000) -> Bool {
 
         if self.normal.isZero() {
             if to.normal.isZero() {
                 // If both normals are zero and the constants are equal, the lines are equal
-                return self.constant.isEqual(to: to.constant);
+                return self.constant.isEqual(circa: to.constant);
             } else {
                 return false;
             }

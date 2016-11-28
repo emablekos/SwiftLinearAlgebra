@@ -102,7 +102,7 @@ struct Vector : Equatable, CustomStringConvertible, CustomDebugStringConvertible
         return lhs.isEqual(to: rhs);
     }
 
-    func isEqual(to: Vector, precision:Double = DBL_EPSILON) -> Bool {
+    func isEqual(to: Vector, precision:Double = DBL_EPSILON * 1000) -> Bool {
         if self.coordinates.count != to.coordinates.count {
             return false;
         }

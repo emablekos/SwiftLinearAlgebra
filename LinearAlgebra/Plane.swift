@@ -38,12 +38,12 @@ struct Plane : CustomStringConvertible {
         return Vector.parallel(self.normal, to.normal)
     }
 
-    func isEqual(to: Plane, precision: Double = DBL_EPSILON) -> Bool {
+    func isEqual(to: Plane, precision: Double = DBL_EPSILON * 1000) -> Bool {
 
         if self.normal.isZero() {
             if to.normal.isZero() {
                 // If both normals are zero and the constants are equal, the lines are equal
-                return self.constant.isEqual(to: to.constant, precision: DBL_EPSILON);
+                return self.constant.isEqual(circa: to.constant);
             } else {
                 return false;
             }
